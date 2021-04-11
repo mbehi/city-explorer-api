@@ -1,4 +1,6 @@
 const express = require('express');
+// actually use the .env file I created
+require('dotenv').config();
 
 const app = express();
 
