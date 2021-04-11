@@ -1,6 +1,8 @@
 const express = require('express');
 // actually use the .env file I created
 require('dotenv').config();
+// import the json file
+const weatherData = require('./server.json');
 
 const app = express();
 
@@ -13,6 +15,10 @@ app.get('/', (request, response) => {
   // when we get that request, send a response that says 'hello!'
   // response has some methods that are very helpful, such as a send method
   response.send('hello!');
+});
+
+app.get('/server', (request, response) => {
+  response.json(weatherData);
 });
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
