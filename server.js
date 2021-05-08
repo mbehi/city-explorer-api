@@ -25,7 +25,6 @@ app.get('/weather', (request, response) => {
 });
 
 
-
 function DailyForecast(day) {
   this.date = day.datetime;
   this.description = day.weather.description;
