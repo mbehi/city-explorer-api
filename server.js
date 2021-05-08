@@ -16,13 +16,23 @@ const PORT = process.env.PORT || 3001;
 // A server's job is to listen at some path for a particular method
 // listening for GET requests at the path
 app.get('/weather', (request, response) => {
-  const allDailyForecasts = weatherData.data.map(day => new DailyForecast(day));
-  response.send(allDailyForecasts);
+  try{
+    const allDailyForecasts = weatherData.data.map(day => new DailyForecast(day));
+    response.send(allDailyForecasts);
+  } catch (error) {
+    handleErrors(error, response);
+  }
 });
+
+
 
 function DailyForecast(day) {
   this.date = day.datetime;
   this.description = day.weather.description;
+}
+
+function handleErrors(error, response) {
+  response.status(500).send('Internal Server Error');
 }
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
