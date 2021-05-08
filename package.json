@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/mbehi/city-explorer-api#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.6.0",
     "express": "^4.17.1"
   }
 }
