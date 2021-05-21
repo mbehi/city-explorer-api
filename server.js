@@ -7,6 +7,7 @@ const cors = require('cors');
 // import the json file
 const weatherData = require('./data/weather.json');
 
+// activing the express library and middleware function
 const app = express();
 app.use(cors());
 
@@ -24,8 +25,7 @@ app.get('/weather', (request, response) => {
   }
 });
 
-
-
+//defining a function to run for each endpoint
 function DailyForecast(day) {
   this.date = day.datetime;
   this.description = day.weather.description;
