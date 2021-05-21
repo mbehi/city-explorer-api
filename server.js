@@ -25,11 +25,6 @@ app.get('/weather', (request, response) => {
   }
 });
 
-<<<<<<< HEAD
-
-=======
-//defining a function to run for each endpoint
->>>>>>> 19081da263d124a7e2333d0b8f988ec879c1cae4
 function DailyForecast(day) {
   this.date = day.datetime;
   this.description = day.weather.description;
